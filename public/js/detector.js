@@ -1,3 +1,5 @@
+
+
 const config = {
       video: { width: 640, height: 480, fps: 30 }
     };
@@ -14,10 +16,11 @@ const config = {
     var loadingDialog;
 	var predictedletter;
 	const drawPoints = document.getElementById('drawPoints');
+	const video = document.querySelector("#pose-video");
 
     async function main() {
 
-      const video = document.querySelector("#pose-video");
+      
       const canvas = document.querySelector("#pose-canvas");
       const ctx = canvas.getContext("2d");
 
@@ -74,7 +77,11 @@ const config = {
         }
 
         // ...and so on
-        setTimeout(() => { estimateHands(); }, 1000 / config.video.fps);
+        setTimeout(() => { 
+			if(gameOver == false){
+				estimateHands(); 
+			}
+		}, 1000 / config.video.fps);
       };
 
       estimateHands();
@@ -96,7 +103,7 @@ const config = {
         }
       };
 
-      const video = document.querySelector("#pose-video");
+      //const video = document.querySelector("#pose-video");
       video.width = width;
       video.height = height;
 
