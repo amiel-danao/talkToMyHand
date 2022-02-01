@@ -1,0 +1,68 @@
+body {
+    text-decoration: none;
+    font-size: 50pt;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-left: 15%;
+    margin-top: 10px;
+    flex-direction: column;
+    background:url("./images/assets/startbc.jpg"); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+  
+.tutorial-asl{
+   text-decoration: none;
+    margin-left: 30px;
+    font-family: 'Bubblegum Sans', cursive;
+    position: relative;
+    display: inline-block;
+    padding: 12px 40px  ;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background:url("BG-frame.jpg");
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: -1px -1px black, 1px 1px #74ba7b;
+    color: rgb(123, 57, 230);
+    -webkit-border-radius:  9px;
+    -moz-border-radius:  9px;
+    -o-border-radius:  9px;
+    border-radius: 50px;
+    box-shadow: 0 .2em #ebcc83; 
+    cursor: pointer;   
+  }
+.tutorial-asl:hover{
+    background-color: #209bec;
+    background: linear-gradient(to bottom, #209bec, #9dd5fa);
+  }
+
+
+  .tutorial-op{
+
+    margin-left: 30px;
+    font-family: 'Bubblegum Sans', cursive;
+    position: relative;
+    display: inline-block;
+    padding: 12px 40px  ;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background:url("BG-frame.jpg");
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: -1px -1px black, 1px 1px #74ba7b;
+    color: rgb(123, 57, 230);
+    -webkit-border-radius:  9px;
+    -moz-border-radius:  9px;
+    -o-border-radius:  9px;
+    border-radius: 50px;
+    box-shadow: 0 .2em #ebcc83; 
+    cursor: pointer;   
+  }
+.tutorial-op:hover{
+    background-color: #209bec;
+    background: linear-gradient(to bottom, #209bec, #9dd5fa);
+  }
+
+
+
+  

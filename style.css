@@ -1,0 +1,137 @@
+body {
+    background:url("palm.jpg");
+    background-position: center;
+    background-size: cover;
+   
+}
+
+#canvas{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index:1;
+}
+  
+#video{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    z-index:-1;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+   
+.gesture-content{
+    border: 2px solid black;
+    width: 49.57%;
+    height: 200px;
+    float: left;
+    text-align: center;
+    border-top-left-radius: 10px;
+    background: url("bush.jpg");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.gesture-content .imageA{
+  width: 199px;
+  height: 199px; 
+  align-items: center;
+  border-radius: 10px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+
+}
+
+.text-container{
+    border: 2px solid black;
+    width: 50%;
+    height: 919px;
+    float: right;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: url("ducks.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.text-container p{
+    font-size: 50px;
+    font-family: 'Work Sans', sans-serif;;
+    font-weight: bold;
+}
+
+video{
+    margin-top: 195px;
+    width: 950px;
+    height: 720px;
+}
+
+.gesture-content .img-container{
+    border: 2px solid black;
+    height: 150px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 40%;
+    border-radius: 20%;
+}
+
+.text-container .historyA{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+
+.text-container .historyB{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+.text-container .historyC{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+.text-container .historyD{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+.text-container .historyE{
+    height: 100px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+
+
+
+.text-container .back{
+  width: 150px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: gray;
+  border-radius: 20px;
+  font-size: 40px;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-top: 30px;
+  align-content: center;
+  font-family: 'Bubblegum Sans', cursive;
+}

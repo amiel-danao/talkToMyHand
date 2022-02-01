@@ -1,0 +1,142 @@
+body{
+    
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+.container-one{
+    width: 250px;
+    height: 600px;
+    background-image: url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-one p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+
+.container-two{
+    width: 250px;
+    height: 600px;
+    background-image:   url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-two p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+
+.container-three{
+    width: 250px;
+    height: 600px;
+    background-image:  url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-three p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+
+.container-four{
+    width: 250px;
+    height: 600px;
+    background-image: url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-four p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+
+.container-five{
+    width: 250px;
+    height: 600px;
+    background-image:  url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-five p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+
+.container-six{ 
+    width: 250px;
+    height: 600px;
+    background-image: url("./images/team/abang.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 100px 30px;
+
+    border: 2px solid black;
+}
+
+.container-six p{
+    font-size: 80px;
+    text-align: center;
+    color: aqua;
+    margin-top: 300px;
+}
+
+.start{
+    font-size: 50px;
+    float: left;
+}
+
+.finish{
+    font-size: 50px;
+    float: right;
+}
