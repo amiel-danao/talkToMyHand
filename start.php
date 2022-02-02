@@ -22,13 +22,21 @@
 
     <p class="title">TALK TO MY HANDS</p>
 
-    <a  href = "tutorial-asl.php" class='tutorial'>TUTORIAL</a><br>
+    <a  href = "tutorial-asl.php" class='tutorial mainButtons'>TUTORIAL</a><br>
 
-    <a href = "talkToMyHand-main/public/index.php" class='start-btn'>START GAME</a><br>
+    <a href="javascript:void(0)" onclick="toggleLevelSelect(true);" class='start-btn mainButtons'>START GAME</a><br>
 
-    <a class="start-ldb" href="#popup1" >LEADERBOARD</a><br>
+    <a class="start-ldb mainButtons" href="#popup1" >LEADERBOARD</a><br>
   
-    <a href = "index.html" class='start-exit'>EXIT</a>
+    <a href = "index.html" class='start-exit mainButtons'>EXIT</a>
+	
+	
+	
+	<a href = "talkToMyHand-main/public/index.php" class='tutorial levelMenu' style="display:none;">LEVEL 1</a><br>
+
+    <a href = "talkToMyHand-main/public/index2.php" class="start-btn levelMenu" style="display:none;">LEVEL 2</a><br>
+  
+    <a href="javascript:void(0)}" onclick="toggleLevelSelect(false);" class='start-exit levelMenu' style="display:none;">BACK</a>
 
 
 <div id="popup1" class="overlay">
@@ -47,6 +55,27 @@
     </div>
 
 </div>
+<script>
+	function toggleLevelSelect(on){
+		var mainVisible = 'inline-block';
+		var levelVisible = 'none';
+		if(on){
+			levelVisible = 'inline-block';
+			mainVisible = 'none';
+		}
+		else{
+			levelVisible = 'none';
+			mainVisible = 'inline-block';
+		}
+		document.querySelectorAll('.mainButtons').forEach(function(el) {
+		   el.style.display = mainVisible;
+		});
+		
+		document.querySelectorAll('.levelMenu').forEach(function(el) {
+		   el.style.display = levelVisible;
+		});
+	}
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script>
         $.post('talkToMyHand-main/public/data.php',{main:true},
