@@ -5,7 +5,7 @@ const correctEffectTimeOut = 2000;
 const JPG = ".jpg";
 
 
-var allWords = ["dog", "bag", "bug", "box", "bus"];
+var allWords = ["dog", "cow", "bug", "box", "bus"];
 var availableLetters = [];
 var currentGuessLetterIndex = 0;
 var correctAnswer = "";
@@ -54,7 +54,7 @@ function giveNextWord(){
 		console.log(imageFileName);
 		$(this).css("background-image", "url('" + fingerImagePath + imageFileName + "')");
 		$(this).css("background-size", "cover");
-		$(this).css("padding-right", "15px");
+		$(this).css("padding-right", "20px");
 	});
 	
 	$("tbody").css("background-image", "url('" + answersImagePath + currentWord + JPG + "')");
