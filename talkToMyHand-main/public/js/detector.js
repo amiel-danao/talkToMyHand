@@ -79,7 +79,7 @@
 			if(gameOver == false){
 				estimateHands(); 
 			}
-		}, 1000 / config.video.fps);
+		}, 10000 / config.video.fps);
       };
 
       estimateHands();

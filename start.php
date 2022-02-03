@@ -20,8 +20,10 @@
 
 <body>
 
+
     <p class="title">TALK TO MY HANDS</p>
 
+<div id="main_menu">
     <a  href = "tutorial-asl.php" class='tutorial mainButtons'>TUTORIAL</a><br>
 
     <a href="javascript:void(0)" onclick="toggleLevelSelect(true);" class='start-btn mainButtons'>START GAME</a><br>
@@ -29,15 +31,15 @@
     <a class="start-ldb mainButtons" href="#popup1" >LEADERBOARD</a><br>
   
     <a href = "index.html" class='start-exit mainButtons'>EXIT</a>
+</div>
 	
-	
-	
-	<a href = "talkToMyHand-main/public/index.php" class='tutorial levelMenu' style="display:none;">LEVEL 1</a><br>
+<div id="level_select" style="display:none;">
+	<a href = "talkToMyHand-main/public/index.php" class='tutorial levelMenu' >LEVEL 1</a><br>
 
-    <a href = "talkToMyHand-main/public/index2.php" class="start-btn levelMenu" style="display:none;">LEVEL 2</a><br>
+    <a href = "talkToMyHand-main/public/index2.php" class="start-btn levelMenu" >LEVEL 2</a><br>
   
-    <a href="javascript:void(0)}" onclick="toggleLevelSelect(false);" class='start-exit levelMenu' style="display:none;">BACK</a>
-
+    <a href="javascript:void(0)}" onclick="toggleLevelSelect(false);" class='start-exit levelMenu' >BACK</a>
+</div>
 
 <div id="popup1" class="overlay">
     <div class="popup">
@@ -56,7 +58,21 @@
 
 </div>
 <script>
+	const main_menu = document.getElementById("main_menu");
+	const level_select = document.getElementById("level_select");
+
 	function toggleLevelSelect(on){
+		if(on){
+			main_menu.style.display = "none";
+			level_select.style.display = "inline-block";
+		}
+		else{
+			main_menu.style.display = "inline-block";
+			level_select.style.display = "none";
+		}
+	}
+
+	function toggleLevelSelectOld(on){
 		var mainVisible = 'inline-block';
 		var levelVisible = 'none';
 		if(on){

@@ -66,6 +66,18 @@ table{
 	
 }
 
+.letter_text{
+	font-family: 'Rowdies', cursive;
+	color:red;
+	font-size:42px;
+}
+
+#clue_text
+{
+	background-color: white;
+	font-size:55px;
+}
+
 .bordered_div{
 	outline: 2px solid black;
 }
@@ -79,8 +91,6 @@ table{
 .back:hover{
   color: green;
 }
-
-
 
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
