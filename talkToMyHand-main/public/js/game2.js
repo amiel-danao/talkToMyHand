@@ -47,16 +47,6 @@ function giveNextWord(){
 		$(this).css("padding-left", "35px");
 	});
 	
-	$(".answer").each(function( index ) {
-		let letter = currentWord.substring(index, index + 1);
-		let imageFileName = (letter+letter+letter) + JPG;
-		console.log(currentWord);
-		console.log(imageFileName);
-		$(this).css("background-image", "url('" + fingerImagePath + imageFileName + "')");
-		$(this).css("background-size", "cover");
-		$(this).css("padding-right", "20px");
-	});
-	
 	$("tbody").css("background-image", "url('" + answersImagePath + currentWord + JPG + "')");
 	$("tbody").css("background-size", "cover");
 	
@@ -70,7 +60,18 @@ function onCorrectGuessed(answer){
 	audioElement.currentTime = 0;
 	audioElement.play();
 	
-	updateCorrectRow(currentGuessLetterIndex);	
+	updateCorrectRow(currentGuessLetterIndex);
+
+        var correctGestureImage = $(".answer")[currentGuessLetterIndex];
+
+	let letter = currentWord.substring(correctGestureImage, correctGestureImage + 1);
+	let imageFileName = (letter+letter+letter) + JPG;
+	console.log(currentWord);
+	console.log(imageFileName);
+	correctGestureImage.css("background-image", "url('" + fingerImagePath + imageFileName + "')");
+	correctGestureImage.css("background-size", "cover");
+	correctGestureImage.css("padding-right", "20px");
+	
 	
 	currentGuessLetterIndex++;
 	
@@ -84,7 +85,9 @@ function onCorrectGuessed(answer){
 			levelComplete();
 		}
 		else{
+                     setTimeout(() => { 
 			giveNextWord();
+		     }, 20000 );
 		}
 	}
 	else{
