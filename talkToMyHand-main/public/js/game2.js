@@ -51,8 +51,8 @@ function giveNextWord() {
 
 	$(".number").each(function(index) {
 		$(this).css("background-color", "green");
-		$(this).text(currentWord.substring(index, index + 1).toUpperCase());
 		$(this).css("padding-left", "35px");
+                $(this).text("");
 	});
 
 	$("tbody").css("background-image", "url('" + answersImagePath + currentWord + JPG + "')");
@@ -80,7 +80,7 @@ function onCorrectGuessed(answer) {
 	correctGestureImage.css("background-size", "cover");
 	correctGestureImage.css("padding-right", "20px");
 
-
+        $(".number").eq(currentGuessLetterIndex).text(letter);
 	currentGuessLetterIndex++;
 
 	if (currentGuessLetterIndex >= currentWord.length) {
