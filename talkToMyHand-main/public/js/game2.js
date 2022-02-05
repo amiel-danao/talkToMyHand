@@ -42,6 +42,13 @@ function giveNextWord() {
 	currentWord = availableWords[index];
 	currentGuessLetterIndex = 0;
 
+        $(".answer").each(function( index ) {
+		$(this).css("background-image", "none");
+		$(this).css("background-size", "cover");
+		$(this).css("padding-right", "20px");
+	});
+
+
 	$(".number").each(function(index) {
 		$(this).css("background-color", "green");
 		$(this).text(currentWord.substring(index, index + 1).toUpperCase());
