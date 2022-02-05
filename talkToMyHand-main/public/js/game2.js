@@ -70,7 +70,7 @@ function onCorrectGuessed(answer) {
 
 	updateCorrectRow(currentGuessLetterIndex);
 
-	var correctGestureImage = $(".answer")[currentGuessLetterIndex];
+	var correctGestureImage = $(".answer").eq(currentGuessLetterIndex);
 
 	let letter = currentWord.substring(currentGuessLetterIndex, currentGuessLetterIndex + 1);
 	let imageFileName = (letter + letter + letter) + JPG;
