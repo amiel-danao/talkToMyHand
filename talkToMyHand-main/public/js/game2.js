@@ -14,6 +14,8 @@ var windAudio;
 var correctEffect;
 var isGuessing = false;
 var gameOver = false;
+var wrongMessageBoxTimeFrequency = 10000;
+var canShowWrongMessageBox = true;
 
 function startGame() {
 	availableWords = [...allWords];
@@ -28,12 +30,28 @@ function onTryGuess(tryAnswer) {
 		return;
 	let currentLetter = currentWord.substring(currentGuessLetterIndex, currentGuessLetterIndex + 1);
 	console.log("trying letter:" + tryAnswer);
-	if (isGuessing == false && tryAnswer.toLowerCase() == currentLetter.toLowerCase()) {
-		isGuessing = true;
-		onCorrectGuessed(correctAnswer);
-		setTimeout(() => {
-			isGuessing = false;
-		}, 1000);
+	if (tryAnswer.toLowerCase() == currentLetter.toLowerCase()) {
+		if(isGuessing == false){
+			isGuessing = true;
+			onCorrectGuessed(correctAnswer);
+			setTimeout(() => {
+				isGuessing = false;
+			}, 1000);
+		}
+	}
+	else{
+		if(canShowWrongMessageBox){
+			canShowWrongMessageBox = false;
+			$( "#dialog-message" ).dialog({
+			modal: true,
+			buttons: {
+				Ok: function() {
+					$( this ).dialog( "close" );
+					setTimeout(() => {canShowWrongMessageBox = true;}, wrongMessageBoxTimeFrequency);
+				}
+			      }
+			});
+		}
 	}
 }
 
