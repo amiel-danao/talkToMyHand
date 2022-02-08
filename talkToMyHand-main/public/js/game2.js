@@ -17,7 +17,21 @@ var gameOver = false;
 var wrongMessageBoxTimeFrequency = 10000;
 var canShowWrongMessageBox = true;
 
+window.addEventListener("DOMContentLoaded", () => {
+	$( "#dialog-message" ).dialog({
+	modal: true,
+	autoOpen: false,
+	buttons: {
+		Ok: function() {
+			$( this ).dialog( "close" );
+			setTimeout(() => {canShowWrongMessageBox = true;}, wrongMessageBoxTimeFrequency);
+		}
+	  }
+	});
+});
+
 function startGame() {
+	
 	availableWords = [...allWords];
 	correctEffect = document.getElementById("snackbar");
 	setupSound();
@@ -40,17 +54,11 @@ function onTryGuess(tryAnswer) {
 		}
 	}
 	else{
-		if(canShowWrongMessageBox){
+		var isOpen = $( "#dialog-message" ).dialog( "isOpen" )
+		if(canShowWrongMessageBox && isOpen == false){
 			canShowWrongMessageBox = false;
-			$( "#dialog-message" ).dialog({
-			modal: true,
-			buttons: {
-				Ok: function() {
-					$( this ).dialog( "close" );
-					setTimeout(() => {canShowWrongMessageBox = true;}, wrongMessageBoxTimeFrequency);
-				}
-			      }
-			});
+				
+			$( "#dialog-message" ).dialog( "open" );
 		}
 	}
 }
@@ -60,7 +68,7 @@ function giveNextWord() {
 	currentWord = availableWords[index];
 	currentGuessLetterIndex = 0;
 
-        $(".answer").each(function( index ) {
+	$(".answer").each(function( index ) {
 		$(this).css("background-image", "none");
 		$(this).css("background-size", "cover");
 		$(this).css("padding-right", "20px");
@@ -70,11 +78,11 @@ function giveNextWord() {
 	$(".number").each(function(index) {
 		$(this).css("background-color", "green");
 		$(this).css("padding-left", "35px");
-                $(this).text("");
+		$(this).text(" ");
 	});
 
-	$("tbody").css("background-image", "url('" + answersImagePath + currentWord + JPG + "')");
-	$("tbody").css("background-size", "cover");
+	$(".image_revealed").css("background-image", "url('" + answersImagePath + currentWord + JPG + "')");
+	$(".image_revealed").css("background-size", "cover");
 
 	getNextLetter();
 }
@@ -98,7 +106,7 @@ function onCorrectGuessed(answer) {
 	correctGestureImage.css("background-size", "cover");
 	correctGestureImage.css("padding-right", "20px");
 
-        $(".number").eq(currentGuessLetterIndex).text(letter);
+        $(".number").eq(currentGuessLetterIndex).text(letter.toUpperCase());
 	currentGuessLetterIndex++;
 
 	if (currentGuessLetterIndex >= currentWord.length) {
@@ -112,7 +120,7 @@ function onCorrectGuessed(answer) {
 		} else {
 			setTimeout(() => {
 				giveNextWord();
-			}, 20000);
+			}, 5000);
 		}
 	} else {
 		getNextLetter();
